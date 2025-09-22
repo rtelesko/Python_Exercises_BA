@@ -1,19 +1,21 @@
-# You need to install the package googletrans 4.0.0.rc1 in order to fix a bug
-from googletrans import Translator
+from deep_translator import GoogleTranslator
 
 
-# Define function
-def translate_text(text_from_lang) -> str:
-    translator = Translator()
-    text_to_lang = translator.translate(text_from_lang, dest="english", src="auto")
-    return text_to_lang.text
+def translation(text):
+    """
+    Using the Google Translator
+    GoogleTranslator is the free/unofficial Google Translate, not the official Google Cloud API.
+    """
+    return GoogleTranslator(source='auto', target='en').translate(text)
 
 
-# Read from console
-text_from_lang = input("Please enter a text to translate ('stop' to quit): ")
+if __name__ == '__main__':
+    text = str(input("Please enter an arbitrary text for translation (stop to terminate): "))
+    while text != "stop":
+        print(translation(text))
+        text = str(input("Please enter text: "))
+    print("Program terminated ...")
 
-while text_from_lang != "stop":
-    print(translate_text(text_from_lang))
-    text_from_lang = input("Please enter a text to translate ('stop' to quit): ")
 
-print("Bye ...")
+
+

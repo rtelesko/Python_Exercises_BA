@@ -1,82 +1,157 @@
-# 📘 Programming Foundations – Exercises
+# 📘 Python Exercises BA
 
-This repository contains solutions and practice programs for the **exercises** from Tony Gaddis’ book *Starting Out with Python*. Each chapter folder mirrors the structure of the book and includes short Python scripts that demonstrate and reinforce programming concepts.
+This repository contains Python practice exercises and small programs for learning core programming concepts. Most of the material follows the chapter structure of Tony Gaddis' *Starting Out with Python*, with additional practice for data analysis using **pandas** and **matplotlib**.
+
+The chapter exercises are generally small, standalone programs designed to practice one concept at a time. The `pd_exercises` directory is separate from the book chapters and contains notebook-based pandas exercises using the Titanic dataset.
 
 ---
 
 ## 📂 Repository Structure
 
-Exercises are organized by chapter:
-
-```
-Programming_Foundations_Exercises/
-├── Chapter 02/   # Variables, input, output, simple calculations
-│   ├── Exercise 2-1.py
-│   ├── Exercise 2-2.py
-│   ├── ...
-│   ├── compound_interest.py
-│   └── grapevines.py
-│
-├── Chapter 03/   # Decision structures (if/else)
-│   ├── Exercise 3-1.py
-│   ├── Exercise 3-2.py
-│   └── ...
-│
-├── Chapter 04/   # Repetition structures (loops)
-│   ├── Exercise 4-1.py
-│   ├── Exercise 4-2.py
-│   └── ...
-│
-├── Chapter 05/   # Functions
-├── Chapter 06/   # Files and exceptions
-├── Chapter 07/   # Lists and tuples
-└── ...
+```text
+Python_Exercises_BA/
+├── Chapter_02/                 # Variables, input/output, and calculations
+├── Chapter_03/                 # Decision structures
+├── Chapter_04/                 # Repetition structures and loops
+├── Chapter_05/                 # Functions
+├── Chapter_06/                 # Files and exceptions
+│   ├── numbers.txt
+│   └── random.txt
+├── Chapter_07/                 # Lists and tuples
+├── Chapter_08/                 # Strings and text-processing exercises
+│   └── text.txt
+├── Chapter_09/                 # Dictionaries and sets
+│   ├── sample.txt
+│   └── text.txt
+├── pd_exercises/
+│   ├── pd_exercises.ipynb      # pandas and matplotlib exercises
+│   └── Titanic-Dataset.csv     # Dataset used by the notebook
+├── requirements.txt
+└── README.md
 ```
 
-Each exercise script is **standalone** — you can run it individually and study the output.
+In addition to the numbered exercises, some chapter folders contain extra practice programs such as `compound_interest.py`, `average_steps_taken.py`, and data-processing examples.
+
+---
+
+## 🐼 Pandas Exercises
+
+The `pd_exercises` directory contains additional data-analysis practice that is independent of the chapter exercises.
+
+`pd_exercises.ipynb` loads `Titanic-Dataset.csv` and includes exercises covering topics such as:
+
+- inspecting DataFrame rows, columns, and data types;
+- filtering and sorting data;
+- calculating minimum, maximum, mean, and mode values;
+- grouping and aggregating data;
+- querying DataFrames;
+- creating charts with matplotlib.
+
+Because the notebook reads `Titanic-Dataset.csv` using a relative path, keep the CSV file in the same directory as the notebook when running it.
 
 ---
 
 ## 🚀 Getting Started
 
-### Requirements
-- Python **3.8+** (any recent version will work)
-- (Optional) a virtual environment for isolation
+### 1. Clone the repository
 
-### Run an exercise
-From the project root, run:
 ```bash
-python "Chapter 02/Exercise 2-1.py"
+git clone https://github.com/rtelesko/Python_Exercises_BA.git
+cd Python_Exercises_BA
 ```
 
-Or first move into a chapter folder:
+### 2. Create a virtual environment (recommended)
+
 ```bash
-cd "Chapter 03"
+python -m venv .venv
+```
+
+Activate it on macOS/Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+Or on Windows PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+### 3. Install dependencies
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+The requirements include packages used by exercises in the repository, including **pandas**, **matplotlib**, **SymPy**, and **deep-translator**. Many of the basic chapter exercises only use Python's standard library.
+
+---
+
+## ▶️ Running the Exercises
+
+### Run a chapter exercise
+
+From the project root:
+
+```bash
+python "Chapter_02/Exercise 2-1.py"
+```
+
+Or move into a chapter directory first:
+
+```bash
+cd Chapter_03
 python "Exercise 3-5.py"
 ```
+
+Some exercises use files stored in their chapter directory. For those programs, it is safest to run the script from that directory so relative file paths resolve correctly. For example:
+
+```bash
+cd Chapter_06
+python "Exercise 6-1.py"
+```
+
+### Run the pandas notebook
+
+Open `pd_exercises/pd_exercises.ipynb` in an environment with Jupyter notebook support, such as JupyterLab, Jupyter Notebook, or VS Code.
+
+When starting Jupyter from the command line, you can work from the pandas exercise directory:
+
+```bash
+cd pd_exercises
+jupyter notebook pd_exercises.ipynb
+```
+
+> Jupyter itself is not listed in `requirements.txt`, so install it separately if your development environment does not already provide notebook support.
 
 ---
 
 ## 🎯 Purpose
-This repository is meant for:
-- Students following *Starting Out with Python*
-- Learners practicing foundational Python exercises
-- Instructors who want quick examples for teaching
 
-Each program demonstrates a single concept, making it easy to test, modify, and extend.
+This repository is intended for:
+
+- practicing Python fundamentals chapter by chapter;
+- experimenting with short, focused programming exercises;
+- reviewing examples involving files, collections, functions, and control flow;
+- practicing introductory data analysis with pandas and matplotlib.
+
+The programs are learning exercises rather than a single application, so files can usually be explored and run independently.
 
 ---
 
-## 📖 References
-- T. Gaddis, *Starting Out with Python*, Pearson Education
+## 📖 Reference
+
+- Tony Gaddis, *Starting Out with Python*, Pearson Education
 
 ---
 
 ## 🤝 Contributing
-This repo is primarily for personal/educational use. If you spot errors or want to add more exercises, feel free to suggest improvements.
+
+This repository is primarily intended for personal and educational use. Corrections, improvements, and additional practice exercises are welcome.
 
 ---
 
-## 📝 License
-This repository is for **educational and personal learning purposes** only. The exercises are adapted from the book and provided here as learning material.
+## 📝 License / Educational Use
 
+The repository is intended for educational and personal learning purposes. Exercise solutions and examples should be used as study material alongside the original learning resources.
